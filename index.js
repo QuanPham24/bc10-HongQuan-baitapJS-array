@@ -118,3 +118,66 @@ function sapXep(){
     document.getElementById("arrange").innerText = `Mang Tu nho den lon: ${numberArray}`;
 }
 
+function isPrime(num){
+    if(num <= 1){
+        return false;
+    }
+
+    for(var i = 2; i <= (num/2); i++){
+        if(num % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+function firstPrime(){
+    var prime = -1;
+    for(var i = 0; i < numberArray.length;i++){
+        if(isPrime(numberArray[i])){
+            prime = numberArray[i];
+            break;
+        }
+    }
+    document.getElementById("showPrime").innerText = `First Prime: ${prime}`;
+}
+
+var numberArray2=[];
+function number(){
+    var numberInput = document.getElementById("numbInPut").value * 1;
+    if(!isNaN(numberInput)){
+        numberArray2.push(numberInput);
+    }
+    document.getElementById("showArray").innerText = `${numberArray2}`;
+}
+
+function countNumber(){
+    var count = 0;
+    for(var i = 0; i < numberArray2.length; i++){
+        if(Number.isInteger(numberArray2[i])){
+            count++;
+        }
+    }
+    document.getElementById("showCount").innerText = `${count}`;
+}
+
+function compare(){
+    var countNeg = 0;
+    var countPos = 0;
+    for(var i = 0; i < numberArray.length;i++){
+        if(numberArray[i] > 0){
+            countPos++;
+        }else if(numberArray[i] < 0){
+            countNeg++;
+        }else{
+            continue;
+        }
+    }
+    if(countPos > countNeg){
+        document.getElementById("showResult").innerText = `So duong > so am`;
+    }else if(countPos < countNeg){
+        document.getElementById("showResult").innerText = `So duong < so am`;
+    }else{
+        document.getElementById("showResult").innerText = `So duong = so am`;
+    }
+}
