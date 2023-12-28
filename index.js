@@ -6,6 +6,7 @@ function storeIntegers(){
         numberArray.push(numberInput);
     }
     displayResult();
+    document.getElementById("intInput").value = "";
 }
 
 function displayResult(){
@@ -74,5 +75,46 @@ function smallestInteger(){
 }
 
 function lastEven(){
-    
+    var lastEvenNum = null;
+    for(var i = numberArray.length-1; i >= 0; i--){
+        if(numberArray[i] % 2 == 0){
+            lastEvenNum = numberArray[i];
+            break;
+        }
+    }
+    document.getElementById("lastevenNumber").innerText = `So chan cuoi cung: ${lastEvenNum}`;
 }
+
+function swap(){
+    var index1 = document.getElementById("index1").value *1;
+    var index2 = document.getElementById("index2").value *1;
+
+    var temp = numberArray[index1];
+    numberArray[index1] = numberArray[index2];
+    numberArray[index2] = temp;
+
+    document.getElementById("swapNumber").innerText = `Mang Sau khi swap: ${numberArray}`;
+}
+
+function sapXep(){
+    var len = numberArray.length;
+    for(var i = 0; i < len -1; i++){
+        var minIndex = i;
+        for(var j = i + 1; j < len ; j++){
+            if(numberArray[j] < numberArray[minIndex]){
+                minIndex = j;
+            }
+        }
+
+        //  doi vi tri neu co so nho hon
+        // minIndex bi thay doi
+        if(minIndex != i){
+            var temp = numberArray[i];
+            numberArray[i] = numberArray[minIndex];
+            numberArray[minIndex] = temp;
+        }
+    }
+
+    document.getElementById("arrange").innerText = `Mang Tu nho den lon: ${numberArray}`;
+}
+

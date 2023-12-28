@@ -17,7 +17,7 @@
         <div class="themSoVaoArray">
           <h1>Bai tap Array</h1>
           <label for="intInput">Nhap so nguyen:</label>
-          <input type="text" id="intInput" placeholder="1,2,3,4,etc">
+          <input type="number" id="intInput" placeholder="1,2,3,4,etc">
           <button onclick="storeIntegers()" type="button">Them vao</button>
           <div  style="background-color: rgb(123, 237, 123); padding: 10px 0px;">
             <span>
@@ -79,6 +79,30 @@
             <i class="fa-regular fa-hand-point-right" style="color: black; font-size: 20px;"></i>
           </span>
           <div id="lastevenNumber" style="display: inline-block;"></div>
+        </div>
+      </div>
+
+      <div class="doiCho">
+        <h2 class="pt-4">Doi vi tri</h2>
+        <input type="text" id="index1" placeholder="Nhap vi tri so 1">
+        <input type="text" id="index2" placeholder="nhap vi tri so 2">
+        <button onclick="swap()" type="button" class="mb-2 mt-2 d-block">doi cho</button>
+        <div  style="background-color: rgb(123, 237, 123); padding: 10px 0px;">
+          <span>
+            <i class="fa-regular fa-hand-point-right" style="color: black; font-size: 20px;"></i>
+          </span>
+          <div id="swapNumber" style="display: inline-block;"></div>
+        </div>
+      </div>
+
+      <div class="sapXepTangDan">
+        <h2 class="pt-4">Sap xep tang dan</h2>
+        <button onclick="sapXep()" type="button" class="mb-2">Sap Xep</button>
+        <div  style="background-color: rgb(123, 237, 123); padding: 10px 0px;">
+          <span>
+            <i class="fa-regular fa-hand-point-right" style="color: black; font-size: 20px;"></i>
+          </span>
+          <div id="arrange" style="display: inline-block;"></div>
         </div>
       </div>
     </div>
